@@ -1,0 +1,20 @@
+{
+  "name": "node_auth_express_mongo_jwt",
+  "version": "0.0.1",
+  "description": "A boilerplate for auth using Express and MongoDB using jwt",
+  "main": "./api/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./api/server.js",
+    "dev": "nodemon ./api/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^9.0.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
