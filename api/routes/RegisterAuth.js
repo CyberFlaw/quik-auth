@@ -39,7 +39,7 @@ router.post(
           const salt = await bcrypt.genSalt(10);
           user.password = await bcrypt.hash(user.password, salt);
 
-          const saveUser = await user
+          await user
             .save()
             .then(() => res.send({ user: user._id }))
             .catch((err) => res.status(400).send(err));
