@@ -1,12 +1,9 @@
 // Importing dependencies
 const router = require("express").Router();
-// const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt");
 
 // Importing Schema
 const User = require("../Models/User");
-
-// Importing Validations
-const { registerValidation } = require("../Validations/RegisterValidation");
 
 const handleDatabaseOperation = async (user, req, res) => {
   await User.findOne({ email: user.email })
@@ -16,8 +13,8 @@ const handleDatabaseOperation = async (user, req, res) => {
           msg: "User already exist",
         });
       else {
-        // const salt = await bcrypt.genSalt(10);
-        // user.password = await bcrypt.hash(user.password, salt);
+        const salt = await bcrypt.genSalt(10);
+        user.password = await bcrypt.hash(user.password, salt);
 
         await user
           .save()
@@ -40,12 +37,7 @@ router.post("/register", async (req, res) => {
   console.log(error + "\n");
 
   try {
-    if (!error) {
-      console.log("Sent to db");
-      // handleDatabaseOperation(user, req, res);
-    } else {
-      return res.status(400).json({ msg: "Validation Failed" });
-    }
+    handleDatabaseOperation(user, req, res);
   } catch (err) {
     return res.status(500).send("Server Error");
   }
