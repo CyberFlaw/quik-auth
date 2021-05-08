@@ -11,7 +11,6 @@
 <br>
 
 <h4>
-<li> Remove Joi and add Mongo validation
 <li> Add JWT support
 <li> Add login route
 <li> Add new fields to signup
@@ -20,8 +19,8 @@
 
 <h1>Current Issues
 <br>
-<h4>
-<li> Joi is kinda broken
+<h4>Bliss ✨
+<!-- <li>  -->
 
 <br><br><br>
 
