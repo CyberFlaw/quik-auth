@@ -1,52 +1,53 @@
 // Importing dependencies
 const router = require("express").Router();
-const bcrypt = require("bcrypt");
-const { check, validationResult } = require("express-validator");
+// const bcrypt = require("bcrypt");
 
-// Importing files
+// Importing Schema
 const User = require("../Models/User");
 
+// Importing Validations
+const { registerValidation } = require("../Validations/RegisterValidation");
+
+const handleDatabaseOperation = async (user, req, res) => {
+  await User.findOne({ email: user.email })
+    .then(async (log) => {
+      if (log)
+        return res.status(400).json({
+          msg: "User already exist",
+        });
+      else {
+        // const salt = await bcrypt.genSalt(10);
+        // user.password = await bcrypt.hash(user.password, salt);
+
+        await user
+          .save()
+          .then(() => res.send({ user: user._id }))
+          .catch((err) => res.status(400).send(err));
+      }
+    })
+    .catch((err) => res.status(500).send(err));
+};
+
 // Declaring a post route
-router.post(
-  "/register",
-  // [
-  //     check("name", "Please Enter a Valid Username").not().isEmpty(),
-  //     check("email", "Please enter a valid email").isEmail(),
-  //     check("password", "Please enter a valid password").isLength({
-  //       min: 6,
-  //     }),
-  // ],
-  async (req, res) => {
-    const user = new User({
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-    });
+router.post("/register", async (req, res) => {
+  const user = new User({
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password,
+  });
 
-    const err = validationResult(user);
-    if (!err.isEmpty())
-      return res.status(400).json({
-        error: err.array(),
-      });
+  const validatedUser = registerValidation(user);
+  console.log(validatedUser + "\n");
 
-    await User.findOne({ email: req.body.email })
-      .then(async (log) => {
-        if (log)
-          return res.status(400).json({
-            msg: "User already exist",
-          });
-        else {
-          const salt = await bcrypt.genSalt(10);
-          user.password = await bcrypt.hash(user.password, salt);
-
-          await user
-            .save()
-            .then(() => res.send({ user: user._id }))
-            .catch((err) => res.status(400).send(err));
-        }
-      })
-      .catch((err) => res.status(500).send(err));
-  }
-);
+  // try {
+  //   if (isValidated) {
+  //     handleDatabaseOperation(user, req, res);
+  //   } else {
+  //     return res.status(400).json({ msg: "Validation Failed" });
+  //   }
+  // } catch (err) {
+  //   return res.status(500).send("Server Error");
+  // }
+});
 
 module.exports = router;
