@@ -15,7 +15,8 @@ const registerValidation = async (schema) => {
   });
 
   const result = validationSchema.validate(schema);
+  console.log(result);
   return result;
 };
 
-module.exports = registerValidation();
+module.exports.registerValidation = registerValidation;

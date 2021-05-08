@@ -36,18 +36,19 @@ router.post("/register", async (req, res) => {
     password: req.body.password,
   });
 
-  const validatedUser = registerValidation(user);
-  console.log(validatedUser + "\n");
+  const { error } = registerValidation(user);
+  console.log(error + "\n");
 
-  // try {
-  //   if (isValidated) {
-  //     handleDatabaseOperation(user, req, res);
-  //   } else {
-  //     return res.status(400).json({ msg: "Validation Failed" });
-  //   }
-  // } catch (err) {
-  //   return res.status(500).send("Server Error");
-  // }
+  try {
+    if (!error) {
+      console.log("Sent to db");
+      // handleDatabaseOperation(user, req, res);
+    } else {
+      return res.status(400).json({ msg: "Validation Failed" });
+    }
+  } catch (err) {
+    return res.status(500).send("Server Error");
+  }
 });
 
 module.exports = router;

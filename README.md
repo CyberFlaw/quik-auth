@@ -11,7 +11,7 @@
 <br>
 
 <h4>
-<li> Fix Joi kinda
+<li> Remove Joi and add Mongo validation
 <li> Add JWT support
 <li> Add login route
 <li> Add new fields to signup
@@ -22,7 +22,6 @@
 <br>
 <h4>
 <li> Joi is kinda broken
-<li> registerValidation cannot be impoted to RegisterAuth.js
 
 <br><br><br>
 
