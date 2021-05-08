@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
 // Importing files
-const authRoute = require("./routes/SignupAuth");
+const authRoute = require("./routes/RegisterAuth");
 
 // Configing dotenv
 dotenv.config();
@@ -32,7 +32,7 @@ const main = () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
-    .then(() => console.log("Conneced to DB!"))
+    .then(() => console.log("[Status] Connected To Database"))
     .catch((err) => {
       console.error(err);
       // process.exit()
@@ -40,7 +40,7 @@ const main = () => {
 
   //   Starting the server
   app.listen(PORT, () => {
-    console.log(`Server started at port ${PORT}`);
+    console.log(`[Status] Server started at port ${PORT}`);
   });
 };
 
