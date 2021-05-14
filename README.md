@@ -15,7 +15,7 @@
 <li> Add login route
 <li> Add new fields to signup
 
-<br><br><br>
+<br><br>
 
 <h1>Current Issues
 <br>

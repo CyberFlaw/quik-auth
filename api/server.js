@@ -4,7 +4,8 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
 // Importing files
-const authRoute = require("./routes/RegisterAuth");
+const registerRoute = require("./routes/RegisterAuth");
+const loginRoute = require("./routes/LoginAuth");
 
 // Configing dotenv
 dotenv.config();
@@ -16,14 +17,14 @@ const main = () => {
   const PORT = process.env.PORT || 8000;
 
   //  Get request on root endpoint
-  app.get("/", (req, res) => {
-    res.send("Root route");
+  app.get("/", (_, res) => {
+    res.json({
+      message: "Api Working!",
+    });
   });
 
   //   Using middlewares
   app.use(express.json());
-
-  app.use("/auth/user", authRoute);
 
   //   Connecting to DB
   //   Setup .env file in root directory and add DB_CONNECT = auth key
@@ -37,6 +38,9 @@ const main = () => {
       console.error(err);
       // process.exit()
     });
+
+  app.use("/auth/user", registerRoute);
+  app.use("/auth/user", loginRoute);
 
   //   Starting the server
   app.listen(PORT, () => {

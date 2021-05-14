@@ -1,6 +1,7 @@
 // Importing dependencies
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 // Importing Schema
 const User = require("../Models/User");
@@ -18,7 +19,27 @@ const handleDatabaseOperation = async (user, req, res) => {
 
         await user
           .save()
-          .then(() => res.send({ user: user._id }))
+          .then(() => {
+            res.send({ user: user._id, name: user.name });
+            const payload = {
+              user: {
+                id: user._id,
+              },
+            };
+            jwt.sign(
+              payload,
+              "randomString",
+              {
+                expiresIn: 10000,
+              },
+              (err, token) => {
+                if (err) throw err;
+                res.status(200).json({
+                  token,
+                });
+              }
+            );
+          })
           .catch((err) => res.status(400).send(err));
       }
     })
@@ -32,9 +53,6 @@ router.post("/register", async (req, res) => {
     email: req.body.email,
     password: req.body.password,
   });
-
-  const { error } = registerValidation(user);
-  console.log(error + "\n");
 
   try {
     handleDatabaseOperation(user, req, res);
