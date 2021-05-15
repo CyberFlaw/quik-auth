@@ -1,4 +1,4 @@
-<h1/>@cyberflaw/express-mongo-jwt
+# @cyberflaw/express-mongo-jwt
 
 <br/>
 
