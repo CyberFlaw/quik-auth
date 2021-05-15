@@ -2,10 +2,11 @@
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const dotenv = require("dotenv");
+require("../../env");
 
 // Importing Schema
-const User = require("../Models/User");
+const config = require("../../config.json");
+const User = require("../../" + config.schemaPath);
 
 const handleDatabaseOperation = async (user, req, res) => {
   await User.findOne({ email: user.email })
@@ -15,8 +16,6 @@ const handleDatabaseOperation = async (user, req, res) => {
           msg: "User already exist",
         });
       else {
-        dotenv.config();
-
         const salt = await bcrypt.genSalt(10);
         user.password = await bcrypt.hash(user.password, salt);
 

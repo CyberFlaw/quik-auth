@@ -1,9 +1,7 @@
 const jwt = require("jsonwebtoken");
-const dotenv = require("dotenv");
+require("../../env");
 
 module.exports = function (req, res, next) {
-  dotenv.config();
-
   const token = req.header("token");
 
   if (!token) return res.status(401).json({ message: "Auth Error" });
