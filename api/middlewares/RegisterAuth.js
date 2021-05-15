@@ -30,7 +30,7 @@ const handleDatabaseOperation = async (user, req, res) => {
               payload,
               "randomString",
               {
-                expiresIn: 10000,
+                expiresIn: "24h",
               },
               (err, token) => {
                 if (err) throw err;

@@ -33,7 +33,7 @@ router.post("/login", async (req, res) => {
         payload,
         "randomString",
         {
-          expiresIn: "7 days",
+          expiresIn: "24h",
         },
         (err, token) => {
           if (err) throw err;

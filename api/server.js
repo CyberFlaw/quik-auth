@@ -4,8 +4,9 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
 // Importing files
-const registerRoute = require("./routes/RegisterAuth");
-const loginRoute = require("./routes/LoginAuth");
+const registerRoute = require("./middlewares/RegisterAuth");
+const loginRoute = require("./middlewares/LoginAuth");
+const fetchUser = require("./middlewares/FetchUser");
 
 // Configing dotenv
 dotenv.config();
@@ -41,6 +42,7 @@ const main = () => {
 
   app.use("/auth/user", registerRoute);
   app.use("/auth/user", loginRoute);
+  app.use("/auth/user", fetchUser);
 
   //   Starting the server
   app.listen(PORT, () => {
