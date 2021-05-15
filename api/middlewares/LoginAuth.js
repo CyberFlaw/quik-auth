@@ -2,6 +2,7 @@
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const dotenv = require("dotenv");
 
 // Importing Schema
 const User = require("../Models/User");
@@ -16,6 +17,8 @@ router.post("/login", async (req, res) => {
     email: loginUser.email,
   })
     .then(async (user) => {
+      dotenv.config();
+
       if (!user) return res.json({ message: "User doesnt exist" });
 
       const isMatch = await bcrypt.compare(loginUser.password, user.password);
@@ -31,7 +34,7 @@ router.post("/login", async (req, res) => {
 
       jwt.sign(
         payload,
-        "randomString",
+        process.env.PRIVATE_KEY,
         {
           expiresIn: "24h",
         },

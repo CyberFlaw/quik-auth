@@ -2,6 +2,7 @@
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const dotenv = require("dotenv");
 
 // Importing Schema
 const User = require("../Models/User");
@@ -14,6 +15,8 @@ const handleDatabaseOperation = async (user, req, res) => {
           msg: "User already exist",
         });
       else {
+        dotenv.config();
+
         const salt = await bcrypt.genSalt(10);
         user.password = await bcrypt.hash(user.password, salt);
 
@@ -28,7 +31,7 @@ const handleDatabaseOperation = async (user, req, res) => {
             };
             jwt.sign(
               payload,
-              "randomString",
+              process.env.PRIVATE_KEY,
               {
                 expiresIn: "24h",
               },
