@@ -5,7 +5,8 @@ const jwt = require("jsonwebtoken");
 require("../../env");
 
 // Importing Schema
-const User = require("../Models/User");
+const config = require("../../config.json");
+const User = require("../../" + config.schemaPath);
 
 const handleDatabaseOperation = async (user, req, res) => {
   await User.findOne({ email: user.email })

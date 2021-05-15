@@ -2,5 +2,6 @@
   "env": {
     "dbConnect": "mongodb+srv://testboy:wwFduh5r0Y9ZI2Fa@cluster0.dmfac.mongodb.net/test",
     "privateKey": "SomethingKindaImportant"
-  }
+  },
+  "schemaPath": "./api/Models/User.js"
 }
