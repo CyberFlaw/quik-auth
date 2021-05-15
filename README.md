@@ -12,4 +12,4 @@ Modify The config.json to auto configure auth. More documentation coming soon...
 
 <br/>
 <br/>
-<a>https://www.npmjs.com/package/@cyberflaw/express-mongo-jwt
+[Visit Website](www.npmjs.com/package/@cyberflaw/express-mongo-jwt)
