@@ -1,15 +1,14 @@
 // Importing dependencies
 const express = require("express");
 const mongoose = require("mongoose");
-const dotenv = require("dotenv");
 
 // Importing files
 const registerRoute = require("./middlewares/RegisterAuth");
 const loginRoute = require("./middlewares/LoginAuth");
 const fetchUser = require("./middlewares/FetchUser");
 
-// Configing dotenv
-dotenv.config();
+// Configing env variables
+require("../env");
 
 // Main function
 const main = () => {
@@ -28,7 +27,6 @@ const main = () => {
   app.use(express.json());
 
   //   Connecting to DB
-  //   Setup .env file in root directory and add DB_CONNECT = auth key
   mongoose
     .connect(process.env.DB_CONNECT, {
       useNewUrlParser: true,
@@ -37,7 +35,7 @@ const main = () => {
     .then(() => console.log("[Status] Connected To Database"))
     .catch((err) => {
       console.error(err);
-      // process.exit()
+      process.exit();
     });
 
   app.use("/auth/user", registerRoute);
