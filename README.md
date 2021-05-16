@@ -47,7 +47,7 @@ in the root directory and add this your .gitignore
 ```
 {
     "dbConnect": "db auth key",
-    "privateKey": "string for signing jwt (HSA SHA256 currently)"
+    "privateKey": "string for signing jwt (HMAC SHA256 currently)"
 }
 ```
 
