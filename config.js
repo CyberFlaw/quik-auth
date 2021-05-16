@@ -1,11 +1,12 @@
-const obj = require("../../../config.json");
+const config = require("../../../config.json");
+const env = require("../../../env.json");
 
 module.exports = {
   env: {
-    dbConnect: obj.env.dbConnect,
-    privateKey: obj.env.privateKey,
+    dbConnect: env.dbConnect,
+    privateKey: env.privateKey,
   },
-  schemaPath: obj.schemaPath,
+  schemaPath: config.schemaPath,
   jwt: {
     expiresIn: "24h",
   },
