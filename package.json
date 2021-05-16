@@ -1,6 +1,6 @@
 {
   "name": "@cyberflaw/express-mongodb-jwt",
-  "version": "1.2.5",
+  "version": "2.0.0",
   "description": "A boilerplate for auth using Express and MongoDB using JWT",
   "main": "./index.js",
   "keywords": [
