@@ -1,4 +1,4 @@
-# @cyberflaw/express-mongo-jwt
+# @cyberflaw/express-mongodb-jwt @1.2.1
 
 ![image info](https://img.shields.io/github/issues/CyberFlaw/Express-MongoDB-JWT-Auth)
 ![image info](https://img.shields.io/github/forks/CyberFlaw/Express-MongoDB-JWT-Auth)
@@ -16,22 +16,34 @@ Modify The config.json to auto configure auth. More documentation coming soon...
 <h4>
 <ol>
 <li>Run `npm i express mongoose jsonwebtoken`
-<li>Run `npm i @auth/express-mongodb-jwt`
+<li>Run `npm i @cyberflaw/express-mongodb-jwt`
 <li>Make a file with name config.json in the root directory
 <li>Fill the code with the appropriate schema 
 <br>
 
-`{ env: { dbConnect: "db auth key", privateKey: "string for signing jwt (HSA SHA256 is currently in use)", }, schemaPath: "path of your mongoose.Schema for your user", }`
-<br>
+    {
+    env: {
+        dbConnect: "db auth key",
+        privateKey: "string for signing jwt (HSA SHA256 currently)", },
 
-<li>Require the package and execute the funtion
-`launchServer(port);`, you pass down a port for your local server
+    schemaPath: "path of your mongoose.Schema for your user"
+    }
+
+<li>Require the package by using 
+and execute the funtion you pass down a port for your local server<br>
+
+```
+const {launchServer} = require('@cyberflaw/express-mongodb-jwt');
+
+launchServer(port);
+```
+
 <li>Hopefully it will workout
 </ol>
 
 <br/>
 <h4>
-[Visit Website](www.npmjs.com/package/@cyberflaw/express-mongo-jwt)
+[Visit Website](https://www.npmjs.com/package/@cyberflaw/express-mongodb-jwt)
 
 <br>
 <br>
