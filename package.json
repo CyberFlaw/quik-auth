@@ -1,6 +1,6 @@
 {
   "name": "@auth/express-mongodb-jwt",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A boilerplate for auth using Express and MongoDB using JWT",
   "main": "./index.js",
   "keywords": [
@@ -9,7 +9,6 @@
     "jwt",
     "boilerplate"
   ],
-
   "author": "",
   "license": "MIT",
   "dependencies": {
