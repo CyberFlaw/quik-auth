@@ -4,11 +4,7 @@
 ![image info](https://img.shields.io/github/forks/CyberFlaw/Express-MongoDB-JWT-Auth)
 ![image info](https://img.shields.io/github/stars/CyberFlaw/Express-MongoDB-JWT-Auth)
 
-<h4>This is a small boilerplate code which can be used to set up auth in a node app using JWT. Sessions and typescript support will be added in the future
-
-<br/>
-<br/>
-Modify The config.json to auto configure auth. More documentation coming soon...
+<h4>A small package which makes authentification using express-mongodb and jwt much simpler. The only effort is to build your own mongoose.Schema and set values for a few json keys. More features will be added soon...
 
 <br/>
 <br/>
@@ -22,14 +18,14 @@ Modify The config.json to auto configure auth. More documentation coming soon...
 <br>
 
     {
-    env: {
-        dbConnect: "db auth key",
-        privateKey: "string for signing jwt (HSA SHA256 currently)", },
+        env: {
+            dbConnect: "db auth key",
+            privateKey: "string for signing jwt (HSA SHA256 currently)", },
 
-    schemaPath: "path of your mongoose.Schema for your user",
-    jwt:{
-        expiresIn: "According to jwt documentation"
-    }
+        schemaPath: "path of your mongoose.Schema for your user",
+        jwt:{
+            expiresIn: "According to jwt documentation"
+        }
     }
 
 <li>Require the package by using 
