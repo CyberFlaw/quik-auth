@@ -3,7 +3,7 @@ const router = require("express").Router();
 const auth = require("./auth");
 
 const config = require("../../config.js");
-const User = require("../../../../" + config.schemaPath);
+const User = require("../../" + config.schemaPath);
 
 router.get("/me", auth, async (req, res) => {
   await User.findById(req.user.id)
