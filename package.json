@@ -2,7 +2,7 @@
   "name": "@auth/express-mongodb-jwt",
   "version": "1.0.0",
   "description": "A boilerplate for auth using Express and MongoDB using JWT",
-  "main": "./api/server.js",
+  "main": "./index.js",
   "keywords": [
     "express",
     "mongodb",
@@ -11,8 +11,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./api/server.js",
-    "dev": "nodemon ./api/server.js"
+    "start": "node .",
+    "dev": "nodemon ."
   },
   "author": "",
   "license": "MIT",

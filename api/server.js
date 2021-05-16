@@ -11,7 +11,7 @@ const fetchUser = require("./middlewares/FetchUser");
 require("../env");
 
 // Main function
-const main = () => {
+module.exports = function () {
   const app = express();
 
   const PORT = process.env.PORT || 8000;
@@ -47,5 +47,3 @@ const main = () => {
     console.log(`[Status] Server started at port ${PORT}`);
   });
 };
-
-main();
