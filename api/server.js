@@ -11,10 +11,10 @@ const fetchUser = require("./middlewares/FetchUser");
 require("../env");
 
 // Main function
-module.exports = function () {
+module.exports = function (port) {
   const app = express();
 
-  const PORT = process.env.PORT || 8000;
+  const PORT = process.env.PORT || port;
 
   //  Get request on root endpoint
   app.get("/", (_, res) => {
