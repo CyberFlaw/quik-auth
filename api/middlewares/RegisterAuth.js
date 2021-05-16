@@ -6,7 +6,7 @@ require("../../env");
 
 // Importing Schema
 const config = require("../../config.js");
-const User = require("../../" + config.schemaPath);
+const User = require("../../../../" + config.schemaPath);
 
 const handleDatabaseOperation = async (user, req, res) => {
   await User.findOne({ email: user.email })

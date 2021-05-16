@@ -6,7 +6,7 @@ require("../../env");
 
 // Importing Schema
 const config = require("../../config.js");
-const User = require("../../" + config.schemaPath);
+const User = require("../../../../" + config.schemaPath);
 
 router.post("/login", async (req, res) => {
   const loginUser = {
