@@ -1,4 +1,4 @@
-const obj = require("../../config.json");
+const obj = require("../../../config.json");
 
 module.exports = {
   env: {
