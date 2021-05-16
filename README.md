@@ -11,8 +11,14 @@
 <h2> How to Configure:
 <h4>
 <ol>
-<li>Run `npm i express mongoose jsonwebtoken`
-<li>Run `npm i @cyberflaw/express-mongodb-jwt`
+<li>
+
+Run `npm i express mongoose jsonwebtoken`
+
+<li>
+
+Run `npm i @cyberflaw/express-mongodb-jwt`
+
 <li>
 
 Make a file with name **config.json**
