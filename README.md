@@ -65,7 +65,9 @@ launchServer(port);
 
 <br/>
 <h4>
-[Visit Website](https://www.npmjs.com/package/@cyberflaw/express-mongodb-jwt)
+
+[Click Here](https://www.npmjs.com/package/@cyberflaw/express-mongodb-jwt)
+to visit npmjs
 
 <br>
 <br>
