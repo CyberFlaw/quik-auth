@@ -9,11 +9,7 @@
     "jwt",
     "boilerplate"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node .",
-    "dev": "nodemon ./test.js"
-  },
+
   "author": "",
   "license": "MIT",
   "dependencies": {
