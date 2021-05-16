@@ -1,4 +1,4 @@
-# @cyberflaw/express-mongodb-jwt @1.2.5
+# @cyberflaw/express-mongodb-jwt @1.4.0
 
 ![image info](https://img.shields.io/github/issues/CyberFlaw/Express-MongoDB-JWT-Auth)
 ![image info](https://img.shields.io/github/forks/CyberFlaw/Express-MongoDB-JWT-Auth)
@@ -26,7 +26,10 @@ Modify The config.json to auto configure auth. More documentation coming soon...
         dbConnect: "db auth key",
         privateKey: "string for signing jwt (HSA SHA256 currently)", },
 
-    schemaPath: "path of your mongoose.Schema for your user"
+    schemaPath: "path of your mongoose.Schema for your user",
+    jwt:{
+        expiresIn: "According to jwt documentation"
+    }
     }
 
 <li>Require the package by using 

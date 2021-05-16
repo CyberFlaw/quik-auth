@@ -6,4 +6,7 @@ module.exports = {
     privateKey: obj.env.privateKey,
   },
   schemaPath: obj.schemaPath,
+  jwt: {
+    expiresIn: "24h",
+  },
 };
