@@ -1,6 +1,6 @@
 {
   "name": "json-auth",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A small package to simplfy authentification using express, mongodb and jwt",
   "main": "./index.js",
   "keywords": [
