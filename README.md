@@ -1,8 +1,4 @@
-# @cyberflaw/express-mongodb-jwt @2.1.1
-
-![image info](https://img.shields.io/github/issues/CyberFlaw/Express-MongoDB-JWT-Auth)
-![image info](https://img.shields.io/github/forks/CyberFlaw/Express-MongoDB-JWT-Auth)
-![image info](https://img.shields.io/github/stars/CyberFlaw/Express-MongoDB-JWT-Auth)
+# json-auth @1.0.0
 
 <h4>A small package which makes authentification using express-mongodb and jwt much simpler. The only effort is to build your own mongoose.Schema and set values for a few json keys. More features will be added soon...
 
@@ -13,7 +9,6 @@
 <ul>
 <li> Added .gitignore support for environment variables
 <li> Added a default mongoose.Schema
-<li> Updated the documentation
 </ul>
 
 <br>
@@ -114,9 +109,6 @@ launchServer(port);
 
 <br/>
 <h3>
-
-[Click Here](https://www.npmjs.com/package/@cyberflaw/express-mongodb-jwt)
-to visit npmjs
 
 [Click Here](https://github.com/CyberFlaw/Express-MongoDB-JWT-Auth)
 to visit the Github repo
