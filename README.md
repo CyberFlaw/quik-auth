@@ -1,4 +1,4 @@
-# json-auth @1.0.0
+# json-auth @1.0.2
 
 ![image info](https://img.shields.io/github/issues/CyberFlaw/json-auth)
 ![image info](https://img.shields.io/github/forks/CyberFlaw/json-auth)
