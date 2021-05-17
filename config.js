@@ -6,7 +6,9 @@ module.exports = {
     dbConnect: env.dbConnect,
     privateKey: env.privateKey,
   },
-  schemaPath: config.schemaPath || "./api/Models/User",
+  schemaPath:
+    config.schemaPath ||
+    "node_modules/@cyberflaw/express-mongodb-jwt/api/Models/User",
   jwt: {
     expiresIn: "24h",
   },
