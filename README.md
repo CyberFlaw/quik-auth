@@ -1,4 +1,4 @@
-# @cyberflaw/express-mongodb-jwt @2.0.0
+# @cyberflaw/express-mongodb-jwt @2.1.0
 
 ![image info](https://img.shields.io/github/issues/CyberFlaw/Express-MongoDB-JWT-Auth)
 ![image info](https://img.shields.io/github/forks/CyberFlaw/Express-MongoDB-JWT-Auth)
@@ -8,6 +8,16 @@
 
 <br/>
 <br/>
+<h2> What's New?
+<h4>
+<ul>
+<li> Added .gitignore support for environment variables
+<li> Added a default mongoose.Schema
+<li> Updated the documentation
+</ul>
+
+<br>
+
 <h2> How to Configure:
 <h4>
 <ol>
@@ -24,7 +34,7 @@ Run `npm i @cyberflaw/express-mongodb-jwt`
 Make a file with name **config.json**
 in the root directory
 
-<li>Fill the code with the appropriate schema 
+<li>Populate the JSON with the appropriate schema 
 <br>
 
     {
@@ -34,6 +44,45 @@ in the root directory
         }
     }
 
+schemaPath can be left out to use the default schema which is:
+
+```
+// Importing dependencies
+const mongoose = require("mongoose");
+
+// Defining post schema
+const userSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+      min: 6,
+      max: 12,
+    },
+    email: {
+      type: String,
+      required: true,
+      min: 6,
+      max: 32,
+    },
+    password: {
+      type: String,
+      required: true,
+      min: 6,
+      max: 124,
+    },
+    date: {
+      type: Date,
+      default: Date.now,
+    },
+  },
+  { collection: "users" }
+);
+
+module.exports = mongoose.model("User", userSchema);
+
+```
+
 <br>
 
 <li>
@@ -41,7 +90,7 @@ in the root directory
 Make a file with name **env.json**
 in the root directory and add this your .gitignore
 
-<li>Fill the code with the appropriate schema 
+<li>Populate the JSON with the appropriate schema 
 <br>
 
 ```
@@ -64,13 +113,14 @@ launchServer(port);
 </ol>
 
 <br/>
-<h4>
+<h3>
 
 [Click Here](https://www.npmjs.com/package/@cyberflaw/express-mongodb-jwt)
 to visit npmjs
 
-<br>
-<br>
+[Click Here](https://github.com/CyberFlaw/Express-MongoDB-JWT-Auth)
+to visit the Github repo
+
 <h2>Developer Log
 <h4>
 The package is still in its early stage and Im a new developer with little expreience. I'll do my best to polish out this package in the upcomming weeks. I'll be adding more features too. I've got many plans and less expriece to execute hopefully it will end up all fine.

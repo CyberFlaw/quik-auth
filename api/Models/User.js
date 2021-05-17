@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 // Defining post schema
 const userSchema = new mongoose.Schema(
   {
-    // Edit the schema for your needs
     name: {
       type: String,
       required: true,
