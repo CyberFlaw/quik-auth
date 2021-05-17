@@ -1,4 +1,4 @@
-# @cyberflaw/express-mongodb-jwt @2.1.0
+# @cyberflaw/express-mongodb-jwt @2.1.1
 
 ![image info](https://img.shields.io/github/issues/CyberFlaw/Express-MongoDB-JWT-Auth)
 ![image info](https://img.shields.io/github/forks/CyberFlaw/Express-MongoDB-JWT-Auth)
