@@ -1,5 +1,10 @@
 # json-auth @1.0.0
 
+![image info](https://img.shields.io/github/issues/CyberFlaw/json-auth)
+![image info](https://img.shields.io/github/forks/CyberFlaw/json-auth)
+![image info](https://img.shields.io/github/stars/CyberFlaw/json-auth)
+![image info](https://img.shields.io/github/license/CyberFlaw/json-auth)
+
 <h4>A small package which makes authentification using express-mongodb and jwt much simpler. The only effort is to build your own mongoose.Schema and set values for a few json keys. More features will be added soon...
 
 <br/>
@@ -110,8 +115,11 @@ launchServer(port);
 <br/>
 <h3>
 
-[Click Here](https://github.com/CyberFlaw/Express-MongoDB-JWT-Auth)
+[Click Here](https://github.com/CyberFlaw/json-auth)
 to visit the Github repo
+
+[Click Here](https://www.npmjs.com/package/json-auth)
+to visit the npmjs
 
 <h2>Developer Log
 <h4>
