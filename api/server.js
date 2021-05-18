@@ -47,3 +47,5 @@ module.exports = function (port) {
     console.log(`[Status] Server started at port ${PORT}`);
   });
 };
+
+module.exports = app;

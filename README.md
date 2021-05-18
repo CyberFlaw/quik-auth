@@ -1,4 +1,4 @@
-# json-auth @1.0.3
+# json-auth @1.0.4
 
 ![image info](https://img.shields.io/github/issues/CyberFlaw/json-auth)
 ![image info](https://img.shields.io/github/forks/CyberFlaw/json-auth)
@@ -12,7 +12,8 @@
 <h2> What's New?
 <h4>
 <ul>
-<li> Added  to set up private routes.
+<li> Added express(); to the exports so that you can make other routes
+<li> Added middleware to set up private routes
 <li> Added .gitignore support for environment variables
 <li> Added a default mongoose.Schema
 </ul>
@@ -108,7 +109,7 @@ in the root directory and add this your .gitignore
 and execute the funtion you pass down a port for your local server<br>
 
 ```
-const {launchServer, auth} = require('@cyberflaw/express-mongodb-jwt');
+const {launchServer, auth, app} = require('@cyberflaw/express-mongodb-jwt');
 
 launchServer(port);
 
