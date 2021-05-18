@@ -12,6 +12,7 @@
 <h2> What's New?
 <h4>
 <ul>
+<li> Added  to set up private routes.
 <li> Added .gitignore support for environment variables
 <li> Added a default mongoose.Schema
 </ul>
@@ -37,12 +38,15 @@ in the root directory
 <li>Populate the JSON with the appropriate schema 
 <br>
 
-    {
-        schemaPath: "path of your mongoose.Schema for your user",
-        jwt:{
-            expiresIn: "refer jwt documentation"
-        }
+```
+{
+    "schemaPath": "path of your mongoose.Schema for your user",
+
+    "jwt":{
+            "expiresIn": "refer jwt documentation"
     }
+}
+```
 
 schemaPath can be left out to use the default schema which is:
 
@@ -104,9 +108,37 @@ in the root directory and add this your .gitignore
 and execute the funtion you pass down a port for your local server<br>
 
 ```
-const {launchServer} = require('@cyberflaw/express-mongodb-jwt');
+const {launchServer, auth} = require('@cyberflaw/express-mongodb-jwt');
 
 launchServer(port);
+
+app.get(
+  '/private/route',
+  auth,
+  (req,res) => res.send("Its a private route!")
+);
+```
+
+<li>
+
+`auth` is a Middleware which can be passed to your other routed in order to make it private. This will be the middleware code running in the background
+
+```
+
+const token = req.header("token");
+
+  if (!token) return res.status(401).json({ message: "Auth Error" });
+
+  try {
+    const decoded = jwt.verify(token, process.env.PRIVATE_KEY);
+    req.user = decoded.user;
+
+    next();
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({ message: "Invalid Token" });
+  }
+
 ```
 
 <li>Hopefully it will workout
@@ -121,9 +153,14 @@ to visit the Github repo
 [Click Here](https://www.npmjs.com/package/json-auth)
 to visit the npmjs
 
+<br>
+
 <h2>Developer Log
 <h4>
 The package is still in its early stage and Im a new developer with little expreience. I'll do my best to polish out this package in the upcomming weeks. I'll be adding more features too. I've got many plans and less expriece to execute hopefully it will end up all fine.
 <br>
 <br>
-Thanks For Your Support
+The repository is kinda a mess right now. Its not in a place to ask for contributors. I'll be fixing it soon more details on that later. Meanwhile start an Issue if you spot some bugs of errors in my code. 
+<br>
+<br>
+❤ Thanks For Your Support ❤
