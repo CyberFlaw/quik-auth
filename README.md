@@ -29,7 +29,7 @@ Run `npm i express mongoose jsonwebtoken`
 
 <li>
 
-Run `npm i @cyberflaw/express-mongodb-jwt`
+Run `npm i json-auth`
 
 <li>
 
