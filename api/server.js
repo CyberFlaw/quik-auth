@@ -11,8 +11,8 @@ const fetchUser = require("./middlewares/FetchUser");
 require("dotenv").config();
 
 // Main function
-module.exports = function (port) {
-  const app = express();
+const main = (port, app) => {
+  // const app = express();
 
   const PORT = process.env.PORT || port;
 
@@ -48,4 +48,4 @@ module.exports = function (port) {
   });
 };
 
-// module.exports = app;
+module.exports = main;

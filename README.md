@@ -5,43 +5,61 @@
 ![image info](https://img.shields.io/github/stars/CyberFlaw/json-auth)
 ![image info](https://img.shields.io/github/license/CyberFlaw/json-auth)
 
-<h4>A small package which makes authentification using express-mongodb and jwt much simpler. The only effort is to build your own mongoose.Schema and set values for a few json keys. More features will be added soon...
+<h4>A small package which makes authentification using express-mongodb and jwt much simpler. The only effort is to build your own mongoose.Schema and set values for a few functions. More features will be added soon...
 
 <br/>
 <br/>
 
 <br>
 
-<!-- <h2> How to Configure:
+<h2> How to Configure:
 <h4>
 <ol>
 <li>
 
-Run `npm i express mongoose jsonwebtoken`
+Clone the repository
+
+<!-- <li>
+
+Run `npm i json-auth` -->
 
 <li>
 
-Run `npm i json-auth`
+Make a `.env` file in your root directory and initialize
+<br/>
+<br/>
+`DB_CONNECT =` Your MongoDB authentification endpoint
+`PRIVATE_KEY =` A private key for signing JWT
 
-<li>
+<br>
 
-Make a file with name **config.json**
-in the root directory
-
-<li>Populate the JSON with the appropriate schema
+<li>The function launchServer() takes in 2 arguments
+<ol>
+<li> port: Defines which port to start the server
+<li> app: This is the return value of Express(), which is used to make some routes 
+</ol>
 <br>
 
 ```
-{
-    "schemaPath": "path of your mongoose.Schema for your user",
+schema();
 
-    "jwt":{
-            "expiresIn": "refer jwt documentation"
-    }
-}
+launchServer(port, app);
+
+app.get(
+  '/private/route',
+  auth,
+  (req,res) => res.send("Its a private route!")
+);
 ```
 
-schemaPath can be left out to use the default schema which is:
+<li>
+
+Call the function `schema()`
+<br>
+<br>
+You can either call the function directly which will use this default schema. You can also pass your own custom schema as an argument to the function so that you can use a custom schema
+
+This is the default schema:
 
 ```
 // Importing dependencies
@@ -84,37 +102,7 @@ module.exports = mongoose.model("User", userSchema);
 
 <li>
 
-Make a file with name **env.json**
-in the root directory and add this your .gitignore
-
-<li>Populate the JSON with the appropriate schema
-<br>
-
-```
-{
-    "dbConnect": "db auth key",
-    "privateKey": "string for signing jwt (HMAC SHA256 currently)"
-}
-```
-
-<li>Require the package by using
-and execute the funtion you pass down a port for your local server<br>
-
-```
-const {launchServer, auth, app} = require('@cyberflaw/express-mongodb-jwt');
-
-launchServer(port);
-
-app.get(
-  '/private/route',
-  auth,
-  (req,res) => res.send("Its a private route!")
-);
-```
-
-<li>
-
-`auth` is a Middleware which can be passed to your other routed in order to make it private. This will be the middleware code running in the background
+`auth` is a Middleware, which can be passed on to your other routes in order to make it private. This will be the middleware code running in the background
 
 ```
 
@@ -137,23 +125,14 @@ const token = req.header("token");
 <li>Hopefully it will workout
 </ol>
 
-<br/>
-<h3>
-
-[Click Here](https://github.com/CyberFlaw/json-auth)
-to visit the Github repo
-
-[Click Here](https://www.npmjs.com/package/json-auth)
-to visit the npmjs
-
-<br> -->
+<br>
 
 <h2>Developer Log
 <h4>
-The package is still in its early stage and Im a new developer with little expreience. I'll do my best to polish out this package in the upcomming weeks. I'll be adding more features too. I've got many plans and less expriece to execute hopefully it will end up all fine.
+The package is still in its early stage and I'm a new developer with little experience. I'll do my best to polish out this package in the upcoming weeks. I'll be adding more features too. I've got many plans and less experience to execute hopefully it will end up all fine.
 <br>
 <br>
-The repository is kinda a mess right now. Its not in a place to ask for contributors. I'll be fixing it soon more details on that later. Meanwhile start an Issue if you spot some bugs of errors in my code. 
+The repository is kinda a mess right now. It's not in a place to ask for contributors. I'll be fixing it soon,  more details on that later. Meanwhile start an Issue if you spot some bugs of errors in my code. 
 <br>
 <br>
 ❤ Thanks For Your Support ❤

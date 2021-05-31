@@ -1,14 +1,22 @@
+const express = require("express");
+const app = express();
+
 const main = require("./api/server");
 const auth = require("./api/middlewares/auth");
+const schema = require("./utils/schemaconfig");
+
 require("dotenv").config();
 
-const launchServer = (port) => {
-  main(port);
+const launchServer = (port, app) => {
+  main(port, app);
 };
 
-// module.exports = {
-//   launchServer,
-//   auth,
-// };
+module.exports = {
+  launchServer,
+  schema,
+  auth,
+  app,
+};
 
-launchServer(8000);
+// Just for testing purpose
+// launchServer(8000, app);

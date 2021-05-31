@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 
 // Importing Schema
 const config = require("../../utils/config.js");
-// const User = require("../../../../../" + config.schemaPath);
+const { User } = config;
 
 router.post("/login", async (req, res) => {
   const loginUser = {
