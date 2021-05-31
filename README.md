@@ -1,4 +1,4 @@
-# json-auth @1.0.4
+# quik-auth @0.0.1
 
 ![image info](https://img.shields.io/github/issues/CyberFlaw/json-auth)
 ![image info](https://img.shields.io/github/forks/CyberFlaw/json-auth)
@@ -9,18 +9,10 @@
 
 <br/>
 <br/>
-<h2> What's New?
-<h4>
-<ul>
-<li> Added express(); to the exports so that you can make other routes
-<li> Added middleware to set up private routes
-<li> Added .gitignore support for environment variables
-<li> Added a default mongoose.Schema
-</ul>
 
 <br>
 
-<h2> How to Configure:
+<!-- <h2> How to Configure:
 <h4>
 <ol>
 <li>
@@ -36,7 +28,7 @@ Run `npm i json-auth`
 Make a file with name **config.json**
 in the root directory
 
-<li>Populate the JSON with the appropriate schema 
+<li>Populate the JSON with the appropriate schema
 <br>
 
 ```
@@ -95,7 +87,7 @@ module.exports = mongoose.model("User", userSchema);
 Make a file with name **env.json**
 in the root directory and add this your .gitignore
 
-<li>Populate the JSON with the appropriate schema 
+<li>Populate the JSON with the appropriate schema
 <br>
 
 ```
@@ -105,7 +97,7 @@ in the root directory and add this your .gitignore
 }
 ```
 
-<li>Require the package by using 
+<li>Require the package by using
 and execute the funtion you pass down a port for your local server<br>
 
 ```
@@ -154,7 +146,7 @@ to visit the Github repo
 [Click Here](https://www.npmjs.com/package/json-auth)
 to visit the npmjs
 
-<br>
+<br> -->
 
 <h2>Developer Log
 <h4>

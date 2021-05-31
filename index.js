@@ -3,7 +3,7 @@ const app = express();
 
 const { main } = require("./api/server");
 const auth = require("./api/middlewares/auth");
-// const app = require("./api/server");
+require("dotenv").config();
 
 const launchServer = (port) => {
   main(port, app);
@@ -12,7 +12,6 @@ const launchServer = (port) => {
 // module.exports = {
 //   launchServer,
 //   auth,
-//   app,
 // };
 
-launchServer(8000, app);
+launchServer(8000);

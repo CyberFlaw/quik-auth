@@ -1,5 +1,4 @@
 const jwt = require("jsonwebtoken");
-require("../../env");
 
 module.exports = function (req, res, next) {
   const token = req.header("token");
