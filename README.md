@@ -17,7 +17,7 @@
 <ol>
 <li>
 
-Clone the repository
+Run `npm i quik-auth` and Require the package
 
 <!-- <li>
 
