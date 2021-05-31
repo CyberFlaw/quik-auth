@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
+    "jest": "^27.0.3",
     "mongoose": "^5.12.9",
     "nodemon": "^2.0.7"
   }
