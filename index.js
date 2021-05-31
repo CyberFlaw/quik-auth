@@ -1,13 +1,14 @@
 const main = require("./api/server");
 const auth = require("./api/middlewares/auth");
-const app = require("./api/server");
+require("dotenv").config();
 
 const launchServer = (port) => {
   main(port);
 };
 
-module.exports = {
-  launchServer,
-  auth,
-  app,
-};
+// module.exports = {
+//   launchServer,
+//   auth,
+// };
+
+launchServer(8000);

@@ -1,8 +1,11 @@
 {
   "name": "json-auth",
-  "version": "1.0.4",
+  "version": "0.0.1",
   "description": "A small package to simplfy authentification using express, mongodb and jwt",
   "main": "./index.js",
+  "scripts": {
+    "dev": "nodemon ."
+  },
   "keywords": [
     "express",
     "mongodb",
@@ -18,6 +21,7 @@
     "nodemon": "^2.0.7"
   },
   "devDependencies": {
+    "dotenv": "^10.0.0",
     "mongoose": "^5.12.9"
   }
 }

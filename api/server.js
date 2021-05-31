@@ -8,7 +8,7 @@ const loginRoute = require("./middlewares/LoginAuth");
 const fetchUser = require("./middlewares/FetchUser");
 
 // Configing env variables
-require("../env");
+require("dotenv").config();
 
 // Main function
 module.exports = function (port) {
@@ -48,4 +48,4 @@ module.exports = function (port) {
   });
 };
 
-module.exports = app;
+// module.exports = app;

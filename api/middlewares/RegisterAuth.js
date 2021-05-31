@@ -2,11 +2,10 @@
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-require("../../env");
 
 // Importing Schema
-const config = require("../../config.js");
-const User = require("../../../../../" + config.schemaPath);
+const config = require("../../utils/config.js");
+// const User = require("../../../../../" + config.schemaPath);
 
 const handleDatabaseOperation = async (user, req, res) => {
   await User.findOne({ email: user.email })
