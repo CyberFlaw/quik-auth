@@ -11,7 +11,9 @@ const fetchUser = require("./middlewares/FetchUser");
 require("dotenv").config();
 
 // Main function
-const main = (port, app) => {
+const main = (port) => {
+  const app = express();
+
   const PORT = process.env.PORT || port;
 
   //  Get request on root endpoint
@@ -46,4 +48,4 @@ const main = (port, app) => {
   });
 };
 
-// module.exports = app;
+module.exports = main;
