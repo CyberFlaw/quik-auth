@@ -11,8 +11,8 @@ const fetchUser = require("./middlewares/FetchUser");
 require("dotenv").config();
 
 // Main function
-const main = (port) => {
-  const app = express();
+const main = (port, app) => {
+  // const app = express();
 
   const PORT = process.env.PORT || port;
 
