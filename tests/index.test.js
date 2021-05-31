@@ -1,13 +1,8 @@
-const { schema } = require("./index");
+const { schema } = require("../index");
 
 // Schema Testing
-const User = require("./api/models/User");
-const {
-  schema1,
-  schema2,
-  schema3,
-  schema4,
-} = require("./utils/test/testschema");
+const User = require("../api/models/User");
+const { schema1, schema2, schema3, schema4 } = require("../utils/testschema");
 
 test("Schema Loading", () => {
   expect(schema()).toBe(User);

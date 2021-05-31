@@ -41,9 +41,14 @@ router.post("/login", async (req, res) => {
           res.status(200).json({ token });
         }
       );
+
+      // Just for testing purpose
+      console.log("[Responce] Request Successfull");
     })
-    .catch((err) => {
-      console.error(err);
+    .catch(() => {
+      // Just for testing purpose
+      console.log("[Responce] Request Failed");
+
       res.status(500).json({
         message: "Server Error",
       });

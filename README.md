@@ -5,7 +5,7 @@
 ![image info](https://img.shields.io/github/stars/CyberFlaw/json-auth)
 ![image info](https://img.shields.io/github/license/CyberFlaw/json-auth)
 
-<h4>A small package which makes authentification using express-mongodb and jwt much simpler. The only effort is to build your own mongoose.Schema and set values for a few functions. More features will be added soon...
+<h4>A small package that makes authentification using express-mongodb and jwt much simpler. The only effort is to build your own mongoose.Schema and set values for a few functions. More features will be added soon...
 
 <br/>
 <br/>
@@ -17,11 +17,11 @@
 <ol>
 <li>
 
-Run `npm i quik-auth` and Require the package
+Run `npm i quik-auth` and Require the package ( Make sure to already install mongoose and dotenv )
 
-<!-- <li>
-
-Run `npm i json-auth` -->
+```
+const { launchServer, schema, auth } = require('quik-auth')
+```
 
 <li>
 
@@ -29,6 +29,7 @@ Make a `.env` file in your root directory and initialize
 <br/>
 <br/>
 `DB_CONNECT =` Your MongoDB authentification endpoint
+<br/>
 `PRIVATE_KEY =` A private key for signing JWT
 
 <br>
@@ -132,7 +133,7 @@ const token = req.header("token");
 The package is still in its early stage and I'm a new developer with little experience. I'll do my best to polish out this package in the upcoming weeks. I'll be adding more features too. I've got many plans and less experience to execute hopefully it will end up all fine.
 <br>
 <br>
-The repository is kinda a mess right now. It's not in a place to ask for contributors. I'll be fixing it soon,  more details on that later. Meanwhile start an Issue if you spot some bugs of errors in my code. 
+The repository is kinda a mess right now. It's not in a place to ask for contributors. I'll be fixing it soon, more details on that later. Meanwhile start an Issue if you spot some bugs in my code. 
 <br>
 <br>
 ❤ Thanks For Your Support ❤

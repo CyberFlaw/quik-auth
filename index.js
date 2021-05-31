@@ -15,7 +15,6 @@ module.exports = {
   launchServer,
   schema,
   auth,
-  app,
 };
 
 // Just for testing purpose
