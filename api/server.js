@@ -17,11 +17,11 @@ const main = (port, app) => {
   const PORT = process.env.PORT || port;
 
   //  Get request on root endpoint
-  app.get("/", (_, res) => {
-    res.json({
-      message: "Api Working!",
-    });
-  });
+  // app.get("/", (_, res) => {
+  //   res.json({
+  //     message: "Api Working!",
+  //   });
+  // });
 
   //   Using middlewares
   app.use(express.json());
